@@ -7,6 +7,7 @@
         border-radius: 5px;
         overflow: hidden;
         justify-content: center;
+        margin-bottom: 10px;
 
     }
 
@@ -16,5 +17,10 @@
         background-color: #bbb;
         border: 1px solid #888;
         width: 33.333333%;
+    }
+
+    &__button {
+        margin-bottom: 30px;
+        
     }
 }

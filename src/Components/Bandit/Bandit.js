@@ -1,23 +1,24 @@
 import React, { Component } from "react";
 import "./bandit.scss";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner/Spinner";
+import Cards from "../Cards/Cards";
+import recipe from "../../data/recipes";
 
 class Bandit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipe: {
-        breakfast: ["#1 breakfast", "#2 breakfast", "#3 breakfast"],
-        lunch: ["#1 lunch", "#2 lunch", "#3 lunch"],
-        dinner: ["#1 dinner", "#2 dinner", "#3 dinner"]
-      },
-      spinner: Array(3).fill(0)
+      recipe,
+      spinner: Array(3).fill(0),
+      showCards: false
     };
   }
 
   spinTheWheel() {
     const random = Math.random() * 100;
     const number = Math.floor(random);
+
+    
     return number;
   }
 
@@ -34,41 +35,46 @@ class Bandit extends Component {
   }
 
   updateTheRecipe() {
-      console.log(this)
       this.setState({
         spinner: [
           this.choosTheRecipe(this.spinTheWheel()),
           this.choosTheRecipe(this.spinTheWheel()),
           this.choosTheRecipe(this.spinTheWheel())
-        ]
+        ],
+        showCards: true
       });
   }
 
   render() {
+    const {showCards} = this.state;
+    console.log(this.state.data);
     return (
       <div className="bandit">
         <div className="bandit__display">
-          <div className="bandit__spinner">
-            <Spinner
-              recipe={
-                this.state.recipe.breakfast[`${this.state.spinner[0]}`]
-              }
-            />
-          </div>
-          <div className="bandit__spinner">
-            <Spinner
-              recipe={this.state.recipe.lunch[`${this.state.spinner[1]}`]}
-            />
-          </div>
-          <div className="bandit__spinner">
-            <Spinner
-              recipe={this.state.recipe.dinner[`${this.state.spinner[2]}`]}
-            />
-          </div>
+          <Spinner
+            recipe={
+              this.state.recipe.breakfast[`${this.state.spinner[0]}`].name
+            }
+          />
+          <Spinner
+            recipe={
+              this.state.recipe.lunch[`${this.state.spinner[1]}`].name
+            }
+          />
+          <Spinner
+            recipe={
+              this.state.recipe.dinner[`${this.state.spinner[2]}`].name
+            }
+          />
         </div>
-        <button onClick={() => this.updateTheRecipe()}>
+        <button
+          onClick={() => this.updateTheRecipe()}
+          className="bandit__button"
+        >
           Spin The bandit!
         </button>
+        {/* show cards after spining the bandit */}
+        {showCards && <Cards />}
       </div>
     );
   }

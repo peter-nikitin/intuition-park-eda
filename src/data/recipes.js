@@ -11,7 +11,7 @@ const recipes = {
       image: "https://source.unsplash.com/-_--ffeeUBE/150x150/"
     },
     {
-      name: "Авокадо и яйцо",
+      name: "Авокадо и яйцо пашот",
       discroption: "Порционные яичницы в фироме корзиное",
       image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
     }

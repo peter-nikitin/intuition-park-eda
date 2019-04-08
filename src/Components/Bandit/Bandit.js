@@ -10,15 +10,18 @@ class Bandit extends Component {
     this.state = {
       recipe,
       spinner: Array(3).fill(0),
-      showCards: false
+      showCards: false,
+      choosenRecipes: {
+        breakfast: recipe.breakfast[0],
+        lunch: recipe.lunch[0],
+        dinner: recipe.dinner[0]
+      }
     };
   }
 
   spinTheWheel() {
     const random = Math.random() * 100;
     const number = Math.floor(random);
-
-    
     return number;
   }
 
@@ -31,7 +34,11 @@ class Bandit extends Component {
     } else {
       recipeNumber = 2;
     }
+    this.setState({
+      
+    })
     return recipeNumber;
+
   }
 
   updateTheRecipe() {
@@ -41,8 +48,20 @@ class Bandit extends Component {
           this.choosTheRecipe(this.spinTheWheel()),
           this.choosTheRecipe(this.spinTheWheel())
         ],
-        showCards: true
+        choosenRecipes: {
+          breakfast: this.state.recipe.breakfast[
+            `${this.state.spinner[0]}`
+          ],
+          lunch: this.state.recipe.lunch[`${this.state.spinner[1]}`],
+          dinner: this.state.recipe.dinner[`${this.state.spinner[2]}`]
+        }
       });
+      this.showCards();
+  }
+  showCards() {
+    this.setState({
+      showCards: true
+    });
   }
 
   render() {
@@ -51,21 +70,9 @@ class Bandit extends Component {
     return (
       <div className="bandit">
         <div className="bandit__display">
-          <Spinner
-            recipe={
-              this.state.recipe.breakfast[`${this.state.spinner[0]}`].name
-            }
-          />
-          <Spinner
-            recipe={
-              this.state.recipe.lunch[`${this.state.spinner[1]}`].name
-            }
-          />
-          <Spinner
-            recipe={
-              this.state.recipe.dinner[`${this.state.spinner[2]}`].name
-            }
-          />
+          <Spinner recipe={this.state.choosenRecipes.breakfast.name} />
+          <Spinner recipe={this.state.choosenRecipes.lunch.name} />
+          <Spinner recipe={this.state.choosenRecipes.dinner.name} />
         </div>
         <button
           onClick={() => this.updateTheRecipe()}
@@ -74,7 +81,7 @@ class Bandit extends Component {
           Spin The bandit!
         </button>
         {/* show cards after spining the bandit */}
-        {showCards && <Cards />}
+        {showCards && <Cards choosenRecipes={this.state.choosenRecipes} />}
       </div>
     );
   }

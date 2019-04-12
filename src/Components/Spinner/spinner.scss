@@ -1,0 +1,15 @@
+.spinner {
+    overflow: hidden;
+    background: #fff url(https://andyhoffman.codes/random-assets/img/slots/sprite5.png) repeat-y;
+    will-change: backgroundPosition;
+    transition: 0.3s background-position ease-in-out;
+    // padding: 0 80px;
+    transform: translateZ(0);
+    height: 390px;
+    background-size: 100% auto;
+    
+
+    &__image {
+        max-width: 100%;
+    };
+}

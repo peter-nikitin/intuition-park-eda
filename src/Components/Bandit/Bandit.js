@@ -15,7 +15,10 @@ class Bandit extends Component {
         breakfast: recipe.breakfast[0],
         lunch: recipe.lunch[0],
         dinner: recipe.dinner[0]
-      }
+      },
+      showMoreBtn: false,
+      slotHeight: 145,
+      backGroundPosition: [0, 0, 0]
     };
   }
 
@@ -27,6 +30,7 @@ class Bandit extends Component {
 
   choosTheRecipe(number) {
     let recipeNumber;
+
     if (number < 33) {
       recipeNumber = 0;
     } else if (number > 33 && number < 66) {
@@ -34,33 +38,36 @@ class Bandit extends Component {
     } else {
       recipeNumber = 2;
     }
-    this.setState({
-      
-    })
     return recipeNumber;
 
   }
 
   updateTheRecipe() {
+    const wheels = [this.spinTheWheel(),this.spinTheWheel(),this.spinTheWheel(),];
+    const spinner = [
+      this.choosTheRecipe(wheels[0]),
+      this.choosTheRecipe(wheels[1]),
+      this.choosTheRecipe(wheels[2]),
+    ];
+    const backGroundPosition = spinner.map(
+      (item,i) =>
+        item * this.state.slotHeight + this.state.backGroundPosition[i]
+    );
       this.setState({
-        spinner: [
-          this.choosTheRecipe(this.spinTheWheel()),
-          this.choosTheRecipe(this.spinTheWheel()),
-          this.choosTheRecipe(this.spinTheWheel())
-        ],
         choosenRecipes: {
-          breakfast: this.state.recipe.breakfast[
-            `${this.state.spinner[0]}`
-          ],
-          lunch: this.state.recipe.lunch[`${this.state.spinner[1]}`],
-          dinner: this.state.recipe.dinner[`${this.state.spinner[2]}`]
-        }
+          breakfast: this.state.recipe.breakfast[`${spinner[0]}`],
+          lunch: this.state.recipe.lunch[`${spinner[1]}`],
+          dinner: this.state.recipe.dinner[`${spinner[2]}`]
+        },
+        backGroundPosition: backGroundPosition
       });
       this.showCards();
+      console.log(spinner);
   }
   showCards() {
     this.setState({
-      showCards: true
+      showCards: true,
+      showMoreBtn: true
     });
   }
 
@@ -69,17 +76,41 @@ class Bandit extends Component {
     console.log(this.state.data);
     return (
       <div className="bandit">
+        <h1 className="bandit__header">
+          Не знаешь, <br />
+          что готовить? <br />
+          Крути!
+        </h1>
         <div className="bandit__display">
-          <Spinner recipe={this.state.choosenRecipes.breakfast.name} />
-          <Spinner recipe={this.state.choosenRecipes.lunch.name} />
-          <Spinner recipe={this.state.choosenRecipes.dinner.name} />
+          <Spinner
+            recipe={this.state.choosenRecipes.breakfast}
+            backGroundPosition={this.state.backGroundPosition[0]}
+          />
+          <Spinner
+            recipe={this.state.choosenRecipes.lunch}
+            backGroundPosition={this.state.backGroundPosition[1]}
+          />
+          <Spinner
+            recipe={this.state.choosenRecipes.dinner}
+            backGroundPosition={this.state.backGroundPosition[2]}
+          />
         </div>
-        <button
-          onClick={() => this.updateTheRecipe()}
-          className="bandit__button"
-        >
-          Spin The bandit!
-        </button>
+        {this.state.showMoreBtn ? (
+          <button
+            onClick={() => this.updateTheRecipe()}
+            className="bandit__button bandit__button_more"
+          >
+            Крути еще!
+          </button>
+        ) : (
+          <button
+            onClick={() => this.updateTheRecipe()}
+            className="bandit__button "
+          >
+            Крути!
+          </button>
+        )}
+
         {/* show cards after spining the bandit */}
         {showCards && <Cards choosenRecipes={this.state.choosenRecipes} />}
       </div>

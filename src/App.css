@@ -2,9 +2,38 @@
 
 .App {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   height: 100vh;
   justify-content: center;
 }
 
+@font-face {
+  font-family: 'Object Sans';
+  font-style: normal;
+  font-weight: 400;
+  /* IE9 Compat Modes */
+  src: local('ObjectSans'),
+  local('OpenSans'),
+    /* IE6-IE8 */
+    url('../src/assets/fonts/ObjectSans-Regular.woff') format('woff2'),
+    /* Super Modern Browsers */
+    url('../src/assets/fonts/ObjectSans-Regular.woff2') format('woff'),
+   
+}
+@font-face {
+  font-family: 'Object Sans';
+  font-style: bold;
+  font-weight: 400;
+  /* IE9 Compat Modes */
+  src: local('ObjectSans'),
+  local('OpenSans'),
+    /* IE6-IE8 */
+    url('../src/assets/fonts/ObjectSans-Heavy.woff') format('woff2'),
+    /* Super Modern Browsers */
+    url('../src/assets/fonts/ObjectSans-Heavy.woff2') format('woff'),
+   
+}
 
+body {
+  font-family: 'Object Sans';
+}

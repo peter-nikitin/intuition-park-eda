@@ -85,14 +85,17 @@ class Bandit extends Component {
           <Spinner
             recipe={this.state.choosenRecipes.breakfast}
             backGroundPosition={this.state.backGroundPosition[0]}
+            recipeType="breakfast"
           />
           <Spinner
             recipe={this.state.choosenRecipes.lunch}
             backGroundPosition={this.state.backGroundPosition[1]}
+            recipeType="lunch"
           />
           <Spinner
             recipe={this.state.choosenRecipes.dinner}
             backGroundPosition={this.state.backGroundPosition[2]}
+            recipeType="dinner"
           />
         </div>
         {this.state.showMoreBtn ? (
@@ -100,14 +103,14 @@ class Bandit extends Component {
             onClick={() => this.updateTheRecipe()}
             className="bandit__button bandit__button_more"
           >
-            Крути еще!
+            Подобрать меню
           </button>
         ) : (
           <button
             onClick={() => this.updateTheRecipe()}
             className="bandit__button "
           >
-            Крути!
+            Подобрать меню
           </button>
         )}
 

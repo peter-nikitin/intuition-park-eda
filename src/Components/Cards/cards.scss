@@ -1,17 +1,33 @@
 .card {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 500px;
 
     &__item {
-        
+        background-color: #fff;
         padding: 10px;
+        margin-right: 8px;
+        flex: 0 0 168px;
+        border-radius: 8px;
     }
 
     &__image {
         display: block;
-        margin-bottom: 15px;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    &__name {
+        font-style: italic;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        margin-top: -15px;
+
+        span {
+            border-bottom: 1px solid #00C24C;
+        }
     }
 }

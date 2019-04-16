@@ -3,11 +3,13 @@ import './spinner.scss';
 
 export default class Spinner extends Component {
     render() {
-        console.log(this.props.recipe);
         const position = this.props.backGroundPosition;
+        const recipeType = this.props.recipeType || '';
         return (
           <div
-            className="bandit__spinner spinner"
+            className={
+              "bandit__spinner spinner spinner__" + recipeType
+            }
             style={{ backgroundPosition: "0px " + position + "px" }}
           >
             {/* <img

@@ -1,7 +1,40 @@
 .recipe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #E5E5E5;
+    z-index: 10000;
+    height: 100%;
+
     &__image {
         display: block;
-        margin: 0 auto 10px auto;
+        margin: 0 auto;
+        width: 230px;
+        border-radius: 50%;
+        margin-top: -200px;
+    }
 
+
+    &__backBtn {
+        background-color: transparent;
+        border: none;
+        color: black;
+        font-size: 18px;
+        line-height: normal;
+        margin-right: auto;
+        margin-left: 0;
+        display: block;
+    }
+
+    &__name {
+        margin-top: -25px;
+    }
+
+    &__body {
+        background-color: #fff;
+        padding: 25px 21px;
+        border-radius: 16px;
+        margin-top: 230px;
     }
 }

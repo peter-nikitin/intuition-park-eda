@@ -32,25 +32,29 @@ export default class Cards extends Component {
     const recipe = this.props.choosenRecipes
     return (
       <div>
-        <div className="bandit__cards card">
-          {Object.keys(recipe).map((item, i) => {
-            console.log(item);
-            return (
-              <div
-                key={i}
-                className="card__item"
-                onClick={() => this.showRecipeCard(recipe[item])}
-              >
-                <img
-                  src={recipe[item].image}
-                  alt={recipe[item].name}
-                  className="card__image"
-                />
-                <div className="card__name">{recipe[item].name}</div>
-                <p>{recipe[item].description}</p>
-              </div>
-            );
-          })}
+        <div className="bandit__cards">
+          <div className=" card">
+            {Object.keys(recipe).map((item, i) => {
+              console.log(item);
+              return (
+                <div
+                  key={i}
+                  className="card__item"
+                  onClick={() => this.showRecipeCard(recipe[item])}
+                >
+                  <img
+                    src={recipe[item].image}
+                    alt={recipe[item].name}
+                    className="card__image"
+                  />
+                  <div className="card__name">
+                    <span>{recipe[item].name}</span>
+                  </div>
+                  <p>{recipe[item].description}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
         {/* {console.log(this.state.recipeToOpen)} */}
         {this.state.showRecipeCard && (

@@ -3,7 +3,7 @@ const recipes = {
     {
       name: "Французский скрэмбл",
       discroption: "Нежный скрэмбл на паровой бане",
-      image: "https://source.unsplash.com/UUHqskar490/150x150/"
+      image: "assets/images/spinner/breakfast.png"
     },
     {
       name: "Английский завтра",

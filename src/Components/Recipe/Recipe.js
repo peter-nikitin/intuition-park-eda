@@ -18,6 +18,21 @@ export default class Recipe extends Component {
           alt={this.props.recipeToOpen.name}
         />
           <h1 className="recipe__name">{this.props.recipeToOpen.name}</h1>
+          
+          <div className="recipe__ingredients">
+            <div className="ingredient">
+              <p>Капуста</p>
+              <p>1 кочан</p>
+            </div>
+            <div className="ingredient">
+              <p>Картошка</p>
+              <p>4 шт</p>
+            </div>
+            <div className="ingredient">
+              <p>Перец болгарский</p>
+              <p>половина</p>
+            </div>
+          </div>
 
           {this.props.recipeToOpen.steps && this.props.recipeToOpen.steps.map(
             (step, i) => (

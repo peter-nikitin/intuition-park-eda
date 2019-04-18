@@ -1,13 +1,15 @@
 .spinner {
     overflow: hidden;
-    background: url(../../assets/images/spinner/spinner-main.png) repeat-y;
+    background: url(../../assets/images/spinner/nine-sprite.png) repeat-y;
     will-change: backgroundPosition;
     transition: 0.3s background-position ease-in-out;
     background-size: 100% auto;
-    // padding: 0 80px;
     transform: translateZ(0);
-    height: 345px;
+    height: 360px;
     border-right: 4px solid #CECECE;
+    will-change: backgroundPosition;
+    transition: 0.3s background-position ease-in-out;
+    transform: translateZ(0);
 
     &:last-child {
         border-right: none;

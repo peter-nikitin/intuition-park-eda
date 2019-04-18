@@ -30,12 +30,12 @@ export default class Cards extends Component {
 
   render() {
     const recipe = this.props.choosenRecipes
+    console.log(this.props.choosenRecipes);
     return (
       <div>
         <div className="bandit__cards">
           <div className=" card">
             {Object.keys(recipe).map((item, i) => {
-              console.log(item);
               return (
                 <div
                   key={i}

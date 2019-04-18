@@ -76,11 +76,6 @@ class Bandit extends Component {
     console.log(this.state.data);
     return (
       <div className="bandit">
-        <h1 className="bandit__header">
-          Не знаешь, <br />
-          что готовить? <br />
-          Крути!
-        </h1>
         <div className="bandit__display">
           <Spinner
             recipe={this.state.choosenRecipes.breakfast}

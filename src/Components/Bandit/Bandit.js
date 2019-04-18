@@ -17,13 +17,9 @@ class Bandit extends Component {
         recipe[0]
       ],
       showMoreBtn: false,
-      slotHeight: 145,
-      backGroundPosition: [0, 0, 0],
-      winner: null
     };
     this.finishHandler = this.finishHandler.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    // console.log(this.state.choosenRecipes)
   }
 
 
@@ -36,7 +32,6 @@ class Bandit extends Component {
         recipe[`${Bandit.matches[2]}`]
       ]
       });
-      // setTimeout(this.showCards(), 300);
       this.showCards();
   }
   showCards() {
@@ -60,15 +55,10 @@ class Bandit extends Component {
 
   finishHandler(value) {
     Bandit.matches.push(value); 
-    
-    // console.log(this.state.choosenRecipes);
+
     if (Bandit.matches.length === 3) {
       this.updateTheRecipe();
       console.log(Bandit.matches);
-      // const { winner } = this.state;
-      // const first = Bandit.matches[0];
-      // let results = Bandit.matches.every(match => match === first);
-      // this.setState({ winner: results });
     }
   }
   

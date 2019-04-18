@@ -1,9 +1,8 @@
-const recipes = {
-  breakfast: [
+const recipes = [
     {
       name: "Французский скрэмбл",
       discroption: "Нежный скрэмбл на паровой бане",
-      image: "assets/images/spinner/breakfast.png"
+      image: require("../assets/images/spinner/breakfast.png")
     },
     {
       name: "Английский завтра",
@@ -14,9 +13,7 @@ const recipes = {
       name: "Авокадо и яйцо пашот",
       discroption: "Порционные яичницы в фироме корзиное",
       image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
-    }
-  ],
-  lunch: [
+    },
     {
       name: "Тыквенный кремсуп",
       discroption: "Суп из тыквы со сливками",
@@ -31,9 +28,7 @@ const recipes = {
       name: "Спагетти с песто",
       discroption: "спагетти с песто )",
       image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
-    }
-  ],
-  dinner: [
+    },
     {
       name: "Вок с курицей",
       discroption: "Лапша с курицей и соусом",
@@ -49,7 +44,6 @@ const recipes = {
       discroption: "Жаркое из говядины с красным вином",
       image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
     }
-  ]
-};
+  ];
 
 export default recipes;

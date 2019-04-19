@@ -12,23 +12,28 @@
         margin: 0 auto;
         width: 230px;
         border-radius: 50%;
-        margin-top: -220px;
+        margin-top: -225px;
     }
 
 
     &__backBtn {
+        display: block;
+        padding: 10px 10px 0;
         background-color: transparent;
         border: none;
         color: black;
-        font-size: 18px;
-        line-height: normal;
-        margin-right: auto;
-        margin-left: 0;
-        display: block;
+        font-size: 16px;
+        font-family: "Montserrat", sans-serif;
+
+        .button-arrow {
+            vertical-align: middle;
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
     }
 
     &__name {
-        margin-top: -15px;
+        margin-top: -10px;
         font-style: italic;
         font-size: 24px;
         line-height: 0.8;
@@ -43,7 +48,7 @@
         margin-top: 2px;
 
         &:first-of-type {
-            margin-top: 220px;
+            margin-top: 210px;
         }
     }
 

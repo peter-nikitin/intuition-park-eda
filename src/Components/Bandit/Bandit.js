@@ -71,7 +71,7 @@ class Bandit extends Component {
 
   render() {
     const {showCards} = this.state;
-    console.log(this.state.cardAnimation);
+    // console.log(this.state.cardAnimation);
     return (
       <div className="bandit">
         <div className="bandit__display">
@@ -94,7 +94,7 @@ class Bandit extends Component {
             ref={child => {
               this._child3 = child;
             }}
-            timer="2400"
+            timer="2200"
           />
         </div>
 

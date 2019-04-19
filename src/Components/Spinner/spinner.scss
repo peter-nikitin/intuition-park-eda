@@ -4,33 +4,10 @@
     will-change: backgroundPosition;
     transition: 0.3s background-position ease-in-out;
     background-size: 100% auto;
-    transform: translateZ(0);
     height: 360px;
     border-right: 4px solid #CECECE;
-    will-change: backgroundPosition;
-    transition: 0.3s background-position ease-in-out;
-    transform: translateZ(0);
 
     &:last-child {
-        border-right: none;
+        border-right: 4px solid transparent;
     }
-
-    &__image {
-        max-width: 100%;
-    }
-
-    // &__breakfast {
-    //     background: url(../../assets/images/spinner/breakfast.png) repeat-y;
-    //     background-size: 100% auto;
-    // }
-
-    // &__lunch {
-    //     background: url(../../assets/images/spinner/lunch.png) repeat-y;
-    //     background-size: 100% auto;
-    // }
-
-    // &__dinner {
-    //     background: url(../../assets/images/spinner/dinner.png) repeat-y;
-    //     background-size: 100% auto;
-    // }
 }

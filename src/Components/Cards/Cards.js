@@ -37,7 +37,7 @@ export default class Cards extends Component {
   render() {
     const recipe = this.props.choosenRecipes
     const animation = this.props.animation
-    console.log(this.props.animation);
+    // console.log(this.props.animation);
     return (
       <div>
         <div className={"bandit__cards card "}>

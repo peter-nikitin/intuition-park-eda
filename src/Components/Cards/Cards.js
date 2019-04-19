@@ -17,14 +17,18 @@ export default class Cards extends Component {
 
   showRecipeCard(recipe) {
     this.setState({
-      showRecipeCard: true,
+      showRecipeCard: !this.state.showRecipeCard,
       recipeToOpen: recipe,
       recipeAnimation: "append"
     });
   }
   
   hideRecipeCard() {
-
+    setTimeout(() => {
+      this.setState({
+        showRecipeCard: !this.state.showRecipeCard,
+      });
+    }, 1000 );
     this.setState({
       recipeAnimation: "hide"
     });

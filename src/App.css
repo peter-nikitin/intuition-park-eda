@@ -4,13 +4,8 @@
   display: flex;
   height: 100vh;
   justify-content: center;
+  width: 375px;
+  margin: 0 auto;
+  max-width: 100%;
 }
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500,800,800i');
 
-
-body {
-  font-family: 'Montserrat',
-  sans-serif;
-  background-color: #E5E5E5;
-
-}

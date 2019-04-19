@@ -1,3 +1,35 @@
+@-webkit-keyframes append-card {
+    0% {
+        visibility: hidden;
+        transform: translateY(100%);
+    }
+
+    100% {
+        visibility: visible; 
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes hide-card {
+    0% {
+        visibility: visible;
+        transform: translateY(0);
+    }
+    100% {
+        visibility: hidden;
+        transform: translateY(100%);
+    }
+
+}
+
+.append {
+    animation: append-card .5s ease-in-out;
+}
+.hide {
+    animation: hide-card .5s ease-in-out;
+    visibility: hidden;
+}
+
 .card {
     display: flex;
     justify-content: space-between;
@@ -8,6 +40,15 @@
         margin-right: 8px;
         flex: 0 0 168px;
         border-radius: 8px;
+        height: 200px;
+        overflow-y: hidden;
+
+        // &:nth-child(2) {
+        //     animation-delay: .02s;
+        // }
+        // &:nth-child(3) {
+        //     animation-delay: .03s;
+        // }
     }
 
     &__image {
@@ -16,6 +57,8 @@
         max-width: 100%;
         margin: 0 auto;
         border-radius: 50%;
+        width: 130px;
+        height: 130px;
     }
     &__name {
         font-style: italic;

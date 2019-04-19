@@ -8,7 +8,6 @@ class Bandit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipe,
       spinner: Array(3).fill(0),
       showCards: false,
       choosenRecipes: [
@@ -17,6 +16,7 @@ class Bandit extends Component {
         recipe[0]
       ],
       showMoreBtn: false,
+      cardAnimation: 'append'
     };
     this.finishHandler = this.finishHandler.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -37,13 +37,14 @@ class Bandit extends Component {
   showCards() {
     this.setState({
       showCards: true,
-      showMoreBtn: true
+      showMoreBtn: true,
+      cardAnimation: 'append'
     });
   }
 
 
   handleClick() {
-    this.setState({ winner: null });
+    this.setState({ cardAnimation: 'hide' });
     this.emptyArray();
     this._child1.forceUpdateHandler();
     this._child2.forceUpdateHandler();
@@ -70,7 +71,7 @@ class Bandit extends Component {
 
   render() {
     const {showCards} = this.state;
-    // console.log(Bandit.matches);
+    console.log(this.state.cardAnimation);
     return (
       <div className="bandit">
         <div className="bandit__display">
@@ -86,16 +87,24 @@ class Bandit extends Component {
             ref={child => {
               this._child2 = child;
             }}
-            timer="2400"
+            timer="2200"
           />
           <Spinner
             onFinish={this.finishHandler}
             ref={child => {
               this._child3 = child;
             }}
-            timer="2200"
+            timer="2400"
           />
         </div>
+
+        {/* show cards after spining the bandit */}
+        {showCards && (
+          <Cards
+            animation={this.state.cardAnimation}
+            choosenRecipes={this.state.choosenRecipes}
+          />
+        )}
         {this.state.showMoreBtn ? (
           <button
             onClick={this.handleClick}
@@ -108,9 +117,6 @@ class Bandit extends Component {
             Подобрать меню
           </button>
         )}
-
-        {/* show cards after spining the bandit */}
-        {showCards && <Cards choosenRecipes={this.state.choosenRecipes} />}
       </div>
     );
   }

@@ -33,7 +33,7 @@ export default class Spinner extends Component {
     position: 0,
     lastPosition: null
   };
-  static iconHeight = 123;
+  static iconHeight = 118;
   multiplier = Math.floor(Math.random() * (4 - 1) + 2.5);
 
   start = this.setStartPosition();
@@ -65,10 +65,13 @@ export default class Spinner extends Component {
         currentPosition = 0;
       }
     }
+
+    let result = currentPosition / Spinner.iconHeight
+    result = (result === 9) ? 0 : result;
     // console.log(-(currentPosition / Spinner.iconHeight));
-    this.props.onFinish(-(currentPosition / Spinner.iconHeight ));
+    this.props.onFinish(-result);
     this.setState({
-      position: currentPosition
+      position: result * Spinner.iconHeight
     });
   }
 
@@ -100,7 +103,7 @@ export default class Spinner extends Component {
         return (
           <div
             className="bandit__spinner spinner"
-            style={{ backgroundPosition: "0px " + position + "px" }}
+            style={{ backgroundPosition: "0px " + -position + "px" }}
           >
           </div>
         );

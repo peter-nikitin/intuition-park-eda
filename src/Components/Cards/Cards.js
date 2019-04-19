@@ -11,36 +11,39 @@ export default class Cards extends Component {
     this.state = {
       showRecipeCard: false,
       recipeToOpen: {},
-      
+      recipeAnimation: 'hide'
     };
   }
 
   showRecipeCard(recipe) {
     this.setState({
-      showRecipeCard: !this.state.showRecipeCard,
-      recipeToOpen: recipe
+      showRecipeCard: true,
+      recipeToOpen: recipe,
+      recipeAnimation: "append"
     });
   }
   
   hideRecipeCard() {
+
     this.setState({
-      showRecipeCard: !this.state.showRecipeCard
+      recipeAnimation: "hide"
     });
   }
 
   render() {
     const recipe = this.props.choosenRecipes
-    // console.log(this.props.choosenRecipes);
+    const animation = this.props.animation
+    console.log(this.props.animation);
     return (
       <div>
-        <div className="bandit__cards">
-          <div className=" card">
+        <div className={"bandit__cards card "}>
             {Object.keys(recipe).map((item, i) => {
-              let card = '';
-              if (item !== undefined) {
-                card = <div
+              let card = "";
+              if (recipe[item] !== undefined) {
+                card = (
+                  <div
                     key={i}
-                    className="card__item"
+                    className={"card__item " + animation}
                     onClick={() =>
                       this.showRecipeCard(recipe[item])
                     }
@@ -55,17 +58,17 @@ export default class Cards extends Component {
                     </div>
                     <p>{recipe[item].description}</p>
                   </div>
-                
+                );
               }
               return card;
             })}
-          </div>
         </div>
         {/* {console.log(this.state.recipeToOpen)} */}
         {this.state.showRecipeCard && (
           <RecipeCard
             recipeToOpen={this.state.recipeToOpen}
             hideRecipeCard={this.hideRecipeCard}
+            animation = {this.state.recipeAnimation}
           />
         )}
       </div>

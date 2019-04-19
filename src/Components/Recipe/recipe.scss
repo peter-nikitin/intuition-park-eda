@@ -1,3 +1,37 @@
+@-webkit-keyframes append-recipe {
+    0% {
+        visibility: hidden;
+        transform: translateX(100%);
+    }
+
+    100% {
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes hide-recipe {
+    0% {
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    100% {
+        visibility: hidden;
+        transform: translateX(100%);
+    }
+
+}
+
+.append-recipe {
+    animation: append-recipe .5s ease-in-out;
+}
+
+.hide-recipe {
+    animation: hide-recipe .5s ease-in-out;
+    visibility: hidden;
+}
+
 .recipe {
     position: absolute;
     top: 0;

@@ -4,7 +4,7 @@ import './recipe.scss';
 export default class Recipe extends Component {
   render() {
     return (
-      <div className="recipe">
+      <div className={"recipe " + this.props.animation + "-recipe" }>
         <button
           className="recipe__backBtn"
           onClick={this.props.hideRecipeCard}

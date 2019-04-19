@@ -1,49 +1,49 @@
 const recipes = [
-    {
-      name: "Французский скрэмбл",
-      discroption: "Нежный скрэмбл на паровой бане",
-      image: require("../assets/images/spinner/breakfast.png")
-    },
-    {
-      name: "Английский завтра",
-      discroption: "Глазунья, бекон и фасоль в тоаматах",
-      image: "https://source.unsplash.com/-_--ffeeUBE/150x150/"
-    },
-    {
-      name: "Авокадо и яйцо пашот",
-      discroption: "Порционные яичницы в фироме корзиное",
-      image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
-    },
-    {
-      name: "Тыквенный кремсуп",
-      discroption: "Суп из тыквы со сливками",
-      image: "https://source.unsplash.com/OMcrCX6wDpU/150x150/"
-    },
-    {
-      name: "Фо с говядиной",
-      discroption: "Вьетнамский суп с лапшой и говядиной",
-      image: "https://source.unsplash.com/hjCA3ecCXAQ/150x150/"
-    },
-    {
-      name: "Спагетти с песто",
-      discroption: "спагетти с песто )",
-      image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
-    },
-    {
-      name: "Вок с курицей",
-      discroption: "Лапша с курицей и соусом",
-      image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
-    },
-    {
-      name: "Печеные овощи с грудкой",
-      discroption: "Куриная грудка печеная с овощами",
-      image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
-    },
-    {
-      name: "Говядина по бургунски",
-      discroption: "Жаркое из говядины с красным вином",
-      image: "https://source.unsplash.com/jUPOXXRNdcA/150x150/"
-    }
-  ];
+  {
+    name: "Банановые панкейки",
+    discroption: "",
+    image: require("../assets/images/recipes/pancacks.png")
+  },
+  {
+    name: "Сендвич с тунцом",
+    discroption: "",
+    image: require("../assets/images/recipes/sandviches.png")
+  },
+  {
+    name: "Английский завтрак",
+    discroption: "",
+    image: require("../assets/images/recipes/english.png")
+  },
+  {
+    name: "Тыквенный кремсуп",
+    discroption: "",
+    image: require("../assets/images/recipes/soup.png")
+  },
+  {
+    name: "Фунчеза с курицей",
+    discroption: "",
+    image: require("../assets/images/recipes/funchoza.png")
+  },
+  {
+    name: "Котлеты",
+    discroption: "",
+    image: require("../assets/images/recipes/kotlets.png")
+  },
+  {
+    name: "Паста с креветками",
+    discroption: "",
+    image: require("../assets/images/recipes/pasta.png")
+  },
+  {
+    name: "Лосось с овощами",
+    discroption: "",
+    image: require("../assets/images/recipes/salmon.png")
+  },
+  {
+    name: "Салат с курицей и авокадо",
+    discroption: "",
+    image: require("../assets/images/recipes/avacado.png")
+  }
+];
 
 export default recipes;

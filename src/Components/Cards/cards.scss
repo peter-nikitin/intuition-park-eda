@@ -38,7 +38,7 @@
         background-color: #fff;
         padding: 10px;
         margin-right: 8px;
-        flex: 0 0 168px;
+        flex: 0 0 45%;
         border-radius: 8px;
         height: 200px;
         overflow-y: hidden;
@@ -57,13 +57,13 @@
 
     &__image {
         display: block;
-        width: auto;
-        max-width: 100%;
-        margin: 0 auto;
+        width: 100%;
+        max-width: 130px;
+        margin-left: -8px;
+        margin-top: -8px;
         border-radius: 50%;
-        width: 130px;
-        height: 130px;
     }
+
     &__name {
         font-style: italic;
         font-weight: 800;
@@ -71,7 +71,8 @@
         line-height: 24px;
         letter-spacing: -0.02em;
         text-align: left;
-        margin-top: -15px;
+        margin-top: -25px;
+        text-shadow: 1px 0px 15px #ffffff;
 
         span {
             border-bottom: 1px solid #00C24C;

@@ -33,7 +33,7 @@ export default class Spinner extends Component {
     position: 0,
     lastPosition: null
   };
-  static iconHeight = 122;
+  static iconHeight = 120;
   multiplier = Math.floor(Math.random() * (4 - 1) + 2.5);
 
   start = this.setStartPosition();

@@ -19,12 +19,13 @@ class Bandit extends Component {
       showMoreBtn: false,
       cardAnimation: "append",
       iSshowInfo: false,
-      recipeAnimation: "append"
+      recipeAnimation: "append",
+      choosen: ""
     };
     this.finishHandler = this.finishHandler.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.showRecipe = this.showRecipe.bind(this)
-    }
+    this.showRecipe = this.showRecipe.bind(this);
+  }
 
   updateTheRecipe() {
     this.setState({
@@ -44,8 +45,12 @@ class Bandit extends Component {
     });
   }
 
+  emptyArray() {
+    Bandit.matches = [];
+  }
+
   handleClick() {
-    this.setState({ cardAnimation: "hide" });
+    this.setState({ cardAnimation: "hide", choosen: "" });
     this.emptyArray();
     this._child1.forceUpdateHandler();
     this._child2.forceUpdateHandler();
@@ -59,12 +64,10 @@ class Bandit extends Component {
 
     if (Bandit.matches.length === 3) {
       this.updateTheRecipe();
-      console.log(Bandit.matches);
+      this.setState({
+        choosen: "choosen"
+      });
     }
-  }
-
-  emptyArray() {
-    Bandit.matches = [];
   }
 
   showRecipe(recipe) {
@@ -87,14 +90,13 @@ class Bandit extends Component {
   }
 
   showInfo() {
-
     this.setState({
       iSshowInfo: !this.state.iSshowInfo,
       recipeAnimation: "append"
     });
   }
-  hideInfo() {
 
+  hideInfo() {
     setTimeout(() => {
       this.setState({
         iSshowInfo: !this.state.iSshowInfo
@@ -107,10 +109,13 @@ class Bandit extends Component {
 
   render() {
     const { showCards } = this.state;
-    // console.log(this.state.cardAnimation);
     return (
       <div className="bandit">
-        <div className="bandit__display">
+        <div
+          className={
+            "bandit__display bandit__display_" + this.state.choosen
+          }
+        >
           <Spinner
             onFinish={this.finishHandler}
             ref={child => {
@@ -145,10 +150,10 @@ class Bandit extends Component {
 
         {/* bandit button  */}
         {this.state.showMoreBtn ? (
-          <div className="bandit__buttons">
+          <div className="bandit__buttons bandit__buttons_more">
             <button
               onClick={this.handleClick}
-              className="bandit__spin bandit__spin_more"
+              className="bandit__spin bandit__spin"
             >
               Подобрать снова
             </button>

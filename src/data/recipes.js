@@ -2,7 +2,41 @@ const recipes = [
   {
     name: "Банановые панкейки",
     discroption: "",
-    image: require("../assets/images/recipes/pancacks.png")
+    image: require("../assets/images/recipes/pancacks.png"),
+    ingrds: [
+      "Банан: 1шт",
+      "Яйцо: 1шт",
+      "Мука (любая): 3ст л.",
+      "Сода: 0.5 ч. л."
+    ],
+    steps: [
+      {
+        action: "blend",
+        products: "Банан, яйцо",
+        desc: "Банан размять вилкой, вбить яйцо, перемешать "
+      },
+      {
+        action: "put",
+        products: "Мука, сода",
+        desc: "Добавить муку и соду"
+      },
+      {
+        action: "blend",
+        products: "Банан, яйцо, мука, сода",
+        desc: "Всё перемешать"
+      },
+      {
+        action: "fry",
+        products: "Тесто",
+        desc:
+          "Выложить маленькими порциями на раскалённую сковороду, обжарить с двух сторон до золотистой корочки под закрытой крышкой."
+      },
+      {
+        action: "serve",
+        products: "Фрукты, мёд, мороженое",
+        desc: "Подавать с фруктами, мёдом, мороженым"
+      }
+    ]
   },
   {
     name: "Сендвич с тунцом",

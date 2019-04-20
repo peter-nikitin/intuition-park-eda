@@ -19,6 +19,7 @@ class Bandit extends Component {
       showMoreBtn: false,
       cardAnimation: "append",
       iSshowInfo: false,
+      infoAnimation: "append",
       recipeAnimation: "append",
       choosen: ""
     };
@@ -92,7 +93,7 @@ class Bandit extends Component {
   showInfo() {
     this.setState({
       iSshowInfo: !this.state.iSshowInfo,
-      recipeAnimation: "append"
+      infoAnimation: "append"
     });
   }
 
@@ -103,7 +104,7 @@ class Bandit extends Component {
       });
     }, 1000);
     this.setState({
-      recipeAnimation: "hide"
+      infoAnimation: "hide"
     });
   }
 
@@ -187,7 +188,7 @@ class Bandit extends Component {
         )}
         {this.state.iSshowInfo && (
           <Info
-            animation={this.state.recipeAnimation}
+            animation={this.state.infoAnimation}
             onClick={() => this.hideInfo()}
           />
         )}

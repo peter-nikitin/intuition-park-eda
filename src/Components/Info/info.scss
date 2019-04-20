@@ -1,3 +1,36 @@
+@-webkit-keyframes append-info {
+    0% {
+        visibility: hidden;
+        transform: translateY(100%);
+    }
+
+    100% {
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes hide-info {
+    0% {
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    100% {
+        visibility: hidden;
+        transform: translateY(100%);
+    }
+
+}
+
+.append-info {
+    animation: append-info .5s ease-in-out;
+}
+
+.hide-info {
+    animation: hide-info .5s ease-in-out;
+    visibility: hidden;
+}
 .info {
     position: absolute;
     top: 0;

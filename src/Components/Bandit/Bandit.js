@@ -4,6 +4,7 @@ import Spinner from "../Spinner/Spinner";
 import Cards from "../Cards/Cards";
 import Info from "../Info/Info";
 import recipe from "../../data/recipes";
+import i from '../../assets/images/i.svg'
 
 import RecipeCard from "../Recipe/Recipe";
 
@@ -149,13 +150,13 @@ class Bandit extends Component {
               onClick={this.handleClick}
               className="bandit__spin bandit__spin_more"
             >
-              Подобрать меню
+              Подобрать снова
             </button>
             <button
               onClick={() => this.showInfo()}
               className="bandit__info bandit__info_hidden"
             >
-              О проекте
+              <img src={i} alt="О проекте" />
             </button>
           </div>
         ) : (
@@ -167,7 +168,7 @@ class Bandit extends Component {
               onClick={() => this.showInfo()}
               className="bandit__info"
             >
-              О проекте
+              <img src={i} alt="О проекте" />
             </button>
           </div>
         )}

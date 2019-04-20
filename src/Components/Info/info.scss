@@ -1,0 +1,48 @@
+.info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1100;
+    background-color: #E5E5E5;
+    padding: 30px 20px;
+
+    h1 {
+        margin: 0;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 25px;
+        letter-spacing: -0.02em;
+
+        img {
+            vertical-align: text-bottom;
+        }
+    }
+    &__link {
+        border-bottom: 1px solid #00C24C;
+    }
+
+    &__add {
+        background: rgba(255, 255, 255, .4);
+        padding: 10px 16px;
+        border-radius: 8px;
+    }
+    &__closeBtn {
+        position: absolute;
+        bottom: 27px;
+        right: 18px;
+        color: #00C24C;
+        border-bottom: 1px dotted #00C24C;
+        background: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        padding: 0 0 5px 0;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./bandit.scss";
 import Spinner from "../Spinner/Spinner";
 import Cards from "../Cards/Cards";
+import Info from "../Info/Info";
 import recipe from "../../data/recipes";
 
 import RecipeCard from "../Recipe/Recipe";
@@ -15,7 +16,9 @@ class Bandit extends Component {
       showCards: false,
       choosenRecipes: [recipe[0], recipe[0], recipe[0]],
       showMoreBtn: false,
-      cardAnimation: "append"
+      cardAnimation: "append",
+      iSshowInfo: false,
+      recipeAnimation: "append"
     };
     this.finishHandler = this.finishHandler.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -82,6 +85,25 @@ class Bandit extends Component {
     });
   }
 
+  showInfo() {
+
+    this.setState({
+      iSshowInfo: !this.state.iSshowInfo,
+      recipeAnimation: "append"
+    });
+  }
+  hideInfo() {
+
+    setTimeout(() => {
+      this.setState({
+        iSshowInfo: !this.state.iSshowInfo
+      });
+    }, 1000);
+    this.setState({
+      recipeAnimation: "hide"
+    });
+  }
+
   render() {
     const { showCards } = this.state;
     // console.log(this.state.cardAnimation);
@@ -122,16 +144,32 @@ class Bandit extends Component {
 
         {/* bandit button  */}
         {this.state.showMoreBtn ? (
-          <button
-            onClick={this.handleClick}
-            className="bandit__button bandit__button_more"
-          >
-            Подобрать меню
-          </button>
+          <div className="bandit__buttons">
+            <button
+              onClick={this.handleClick}
+              className="bandit__spin bandit__spin_more"
+            >
+              Подобрать меню
+            </button>
+            <button
+              onClick={() => this.showInfo()}
+              className="bandit__info bandit__info_hidden"
+            >
+              О проекте
+            </button>
+          </div>
         ) : (
-          <button onClick={this.handleClick} className="bandit__button ">
-            Подобрать меню
-          </button>
+          <div className="bandit__buttons">
+            <button onClick={this.handleClick} className="bandit__spin ">
+              Подобрать меню
+            </button>
+            <button
+              onClick={() => this.showInfo()}
+              className="bandit__info"
+            >
+              О проекте
+            </button>
+          </div>
         )}
 
         {this.state.showRecipe && (
@@ -139,6 +177,12 @@ class Bandit extends Component {
             recipeToOpen={this.state.recipeToOpen}
             hideRecipeCard={() => this.hideRecipe()}
             animation={this.state.recipeAnimation}
+          />
+        )}
+        {this.state.iSshowInfo && (
+          <Info
+            animation={this.state.recipeAnimation}
+            onClick={() => this.hideInfo()}
           />
         )}
       </div>

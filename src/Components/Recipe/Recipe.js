@@ -49,7 +49,7 @@ export default class Recipe extends Component {
                     src={
                       require("../../assets/images/activities/" +
                       step.action +
-                      ".svg")
+                      ".png")
                     }
                     alt=""
                   />

@@ -71,10 +71,10 @@ class Bandit extends Component {
     }
   }
 
-  showRecipe(recipe) {
+  showRecipe(recipe1) {
     this.setState({
       showRecipe: !this.state.showRecipe,
-      recipeToOpen: recipe,
+      recipeToOpen: recipe[0],
       recipeAnimation: "append"
     });
   }

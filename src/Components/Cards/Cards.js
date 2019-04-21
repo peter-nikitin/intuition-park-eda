@@ -4,15 +4,6 @@ import "./cards.scss";
 import { Object } from 'core-js';
 
 export default class Cards extends Component {
-  constructor(props) {
-    super(props)
-    // this.hideRecipeCard = this.hideRecipeCard.bind(this);
-    this.state = {
-      showRecipeCard: false,
-      recipeToOpen: {},
-      recipeAnimation: 'hide'
-    };
-  }
 
   
 

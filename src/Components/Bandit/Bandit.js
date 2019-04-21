@@ -21,11 +21,13 @@ class Bandit extends Component {
       iSshowInfo: false,
       infoAnimation: "append",
       recipeAnimation: "append",
-      choosen: ""
+      choosen: "",
+      choosenIndex: ""
     };
     this.finishHandler = this.finishHandler.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.showRecipe = this.showRecipe.bind(this);
+    // this.showNextRecipe = this.showNextRecipe.bind(this);
   }
 
   updateTheRecipe() {
@@ -75,8 +77,33 @@ class Bandit extends Component {
     this.setState({
       showRecipe: !this.state.showRecipe,
       recipeToOpen: recipe[0],
-      recipeAnimation: "append"
+      recipeAnimation: "append",
     });
+  }
+
+  showNextRecipe(recipeIndex) {
+    const index =
+      this.state.choosenRecipes.indexOf(recipeIndex) === -1
+        ? 0
+        : this.state.choosenRecipes.indexOf(recipeIndex);
+    let targetRecipe;
+   if (index === 2) {
+      targetRecipe = this.state.choosenRecipes[0];
+    } else {
+      targetRecipe = this.state.choosenRecipes[index + 1];
+    }
+
+    setTimeout(() => {
+      this.setState({
+        recipeToOpen: targetRecipe,
+        recipeAnimation: 'append'
+      });
+    }, 500);
+    this.setState({
+      recipeAnimation: "hide"
+    });
+
+    console.log(index);
   }
 
   hideRecipe() {
@@ -184,6 +211,8 @@ class Bandit extends Component {
             recipeToOpen={this.state.recipeToOpen}
             hideRecipeCard={() => this.hideRecipe()}
             animation={this.state.recipeAnimation}
+            nextRecipe={() => this.showNextRecipe(this.state.recipeToOpen)}
+            choosenIndex={this.state.choosenIndex}
           />
         )}
         {this.state.iSshowInfo && (

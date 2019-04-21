@@ -10,7 +10,9 @@ import put from '../../assets/images/activities/put.png'
 import serve from "../../assets/images/activities/serve.png";
 
 export default class Recipe extends Component {
+ 
   render() {
+    //  console.log(this.props.choosenIndex);
     return (
       <div className={"recipe " + this.props.animation + "-recipe"}>
         <button
@@ -67,23 +69,22 @@ export default class Recipe extends Component {
                   action = "";
               }
               return (
-              <section key={i} className="recipe__step step">
-                <div className="image-wrapper">
-                  <div className="title-wrapper">
-                    <h3 className="step__index">{i + 1}</h3>
-                    {/* <p className="step__name">Варить</p> */}
-                    <h2 className="step__ingredients">{step.products}</h2>
+                <section key={i} className="recipe__step step">
+                  <div className="image-wrapper">
+                    <div className="title-wrapper">
+                      <h3 className="step__index">{i + 1}</h3>
+                      {/* <p className="step__name">Варить</p> */}
+                      <h2 className="step__ingredients">{step.products}</h2>
+                    </div>
+                    <img className="step__pic" src={action} alt="" />
                   </div>
-                  <img
-                    className="step__pic"
-                    
-                    src={action}
-                    alt=""
-                  />
-                </div>
-                <p className="step__description">{step.desc}</p>
-              </section>
-            )})}
+                  <p className="step__description">{step.desc}</p>
+                </section>
+              );
+            })}
+          <button
+            onClick={this.props.nextRecipe}
+          >Следующий рецепт</button>
         </div>
       </div>
     );

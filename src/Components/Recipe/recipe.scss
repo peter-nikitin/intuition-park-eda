@@ -23,6 +23,24 @@
 
 }
 
+@-webkit-keyframes change-recipe {
+    0% {
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    50% {
+visibility: hidden;
+transform: translateX(100%);
+    }
+
+    100% {
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+}
+
 .append-recipe {
     animation: append-recipe .5s ease-in-out;
 }
@@ -30,6 +48,10 @@
 .hide-recipe {
     animation: hide-recipe .5s ease-in-out;
     visibility: hidden;
+}
+.change-recipe {
+    animation: change-recipe .5s ease-in-out;
+    // visibility: hidden;
 }
 
 .recipe {

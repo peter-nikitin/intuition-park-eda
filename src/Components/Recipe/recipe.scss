@@ -55,6 +55,7 @@ transform: translateX(100%);
 }
 
 .recipe {
+    -webkit-transform: translate3d(0,0,0);
     position: absolute;
     top: 0;
     left: 0;
@@ -183,6 +184,11 @@ transform: translateX(100%);
         width: 250px;
         height: 250px;
         transform: translateX(-100%);
-        z-index: 10000;
+        z-index: 1;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
     }
 }

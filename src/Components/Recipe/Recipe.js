@@ -76,7 +76,12 @@ export default class Recipe extends Component {
                       {/* <p className="step__name">Варить</p> */}
                       <h2 className="step__ingredients">{step.products}</h2>
                     </div>
-                    <img className="step__pic" src={action} alt="" />
+                    <div className="step__pic">
+                    <img
+                      src={action}
+                      alt=""
+                    />
+                  </div>
                   </div>
                   <p className="step__description">{step.desc}</p>
                 </section>
@@ -84,7 +89,10 @@ export default class Recipe extends Component {
             })}
           <button
             onClick={this.props.nextRecipe}
-          >Следующий рецепт</button>
+          >Следующий рецепт
+          </button>
+
+            
         </div>
       </div>
     );

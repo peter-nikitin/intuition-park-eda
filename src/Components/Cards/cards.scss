@@ -1,11 +1,15 @@
 @-webkit-keyframes append-card {
     0% {
         visibility: hidden;
+        opacity: 0;
+        transition: opacity;
         transform: translateY(-100%);
     }
 
     100% {
         visibility: visible; 
+        opacity: 1;
+        transition: opacity;
         transform: translateY(0);
     }
 }
@@ -13,20 +17,24 @@
 @-webkit-keyframes hide-card {
     0% {
         visibility: visible;
-        transform: translateY(0);
+        opacity: 1;
+        transition: opacity;
+        // transform: translateY(0);
     }
     100% {
         visibility: hidden;
-        transform: translateY(-100%);
+        opacity: 0;
+        transition: opacity;
+        // transform: translateY(-100%);
     }
 
 }
 
 .append {
-    animation: append-card .5s ease-in-out;
+    animation: append-card .25s ease-in-out;
 }
 .hide {
-    animation: hide-card .5s ease-in-out;
+    animation: hide-card .4s ease-in-out;
     visibility: hidden;
 }
 

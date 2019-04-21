@@ -42,16 +42,16 @@
 }
 
 .append-recipe {
-    animation: append-recipe .5s ease-in-out;
+    animation: append-recipe .25s ease-in-out;
 }
 
 .hide-recipe {
-    animation: hide-recipe .5s ease-in-out;
+    animation: hide-recipe .25s ease-in-out;
     visibility: hidden;
 }
 
 .change-recipe {
-    animation: change-recipe .5s ease-in-out;
+    animation: change-recipe .25s ease-in-out;
     // visibility: hidden;
 }
 

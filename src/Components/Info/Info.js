@@ -7,7 +7,7 @@ import "./info.scss";
 const info = (props) => {
     console.log(props)
     return ( 
-        <div class={"info " + props.animation + "-info"}>
+        <div className={"info " + props.animation + "-info"}>
             <h1>О проекте</h1>
             <p>Подбиратор рецептов» для тех, кому тяжело придумать, что приготовить. Вращайте барабан и готовьте по крупной понятной инструкции.</p>
             <p>

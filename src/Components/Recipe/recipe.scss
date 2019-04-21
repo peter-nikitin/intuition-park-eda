@@ -78,6 +78,7 @@
         padding: 20px 0 40px 0;
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
     }
 
     &__backBtn {
@@ -88,6 +89,7 @@
         color: black;
         font-size: 16px;
         font-family: "Montserrat", sans-serif;
+        text-align: left;
         display: flex;
 
         &_bottom {
@@ -111,6 +113,7 @@
 
     &__nextBtn {
         font-style: italic;
+        font-family: "Montserrat", sans-serif;
         font-weight: 800;
         font-size: 24px;
         line-height: 26px;

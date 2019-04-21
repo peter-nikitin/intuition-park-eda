@@ -33,7 +33,7 @@ export default class Cards extends Component {
                     <div className="card__name">
                       <span>{recipe[item].name}</span>
                     </div>
-                    <p>{recipe[item].description}</p>
+                    {/* <p>{recipe[item].description}</p> */}
                   </div>
                 );
               }

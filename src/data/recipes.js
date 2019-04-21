@@ -285,7 +285,7 @@ const recipes = [
     ]
   },
   {
-    name: "Лосось с овощами в соусе терияки",
+    name: "Лосось с овощами",
     discroption: "",
     image: require("../assets/images/recipes/salmon.png"),
     ingrds: [

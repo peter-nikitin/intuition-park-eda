@@ -20,7 +20,7 @@
         border-radius: 5px;
         overflow: hidden;
         justify-content: center;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
         // width: 100%;
         position: relative;
         flex-shrink: 1;
@@ -125,6 +125,11 @@
         background: transparent;
         border: none;
         margin-left: 15px;
+        border-radius: 8px;
+
+        &:hover, &:active {
+            background: rgba(255, 255, 255, 0.4);
+        }
 
         &_hidden {
 

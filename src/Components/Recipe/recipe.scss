@@ -159,8 +159,8 @@
     &__pic {
         margin-top: auto;
         width: 250px;
-        height: 100%;
+        height: 250px;
         transform: translateX(-100%);
-        z-index: 1;
+        z-index: 10000;
     }
 }

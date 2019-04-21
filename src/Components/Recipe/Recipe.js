@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import "./recipe.scss";
 // import boil from "../../assets/images/boil.png";
 import arrow from "../../assets/images/arrow.svg";
+import blend from "../../assets/images/activities/blend.png";
+import boil from "../../assets/images/activities/boil.png";
+import cut from '../../assets/images/activities/cut.png'
+import fry from '../../assets/images/activities/fry.png'
+import put from '../../assets/images/activities/put.png'
+import serve from "../../assets/images/activities/serve.png";
 
 export default class Recipe extends Component {
   render() {
@@ -36,7 +42,31 @@ export default class Recipe extends Component {
         </div>
         <div className="recipe__body">
           {this.props.recipeToOpen.steps &&
-            this.props.recipeToOpen.steps.map((step, i) => (
+            this.props.recipeToOpen.steps.map((step, i) => {
+              let action;
+              switch (step.action) {
+                case "blend":
+                  action = blend;
+                  break;
+                case "boil":
+                  action = boil;
+                  break;
+                case "cut":
+                  action = cut;
+                  break;
+                case "fry":
+                  action = fry;
+                  break;
+                case "put":
+                  action = put;
+                  break;
+                case "serve":
+                  action = serve;
+                  break;
+                default:
+                  action = "";
+              }
+              return (
               <section key={i} className="recipe__step step">
                 <div className="image-wrapper">
                   <div className="title-wrapper">
@@ -46,17 +76,14 @@ export default class Recipe extends Component {
                   </div>
                   <img
                     className="step__pic"
-                    src={
-                      require("../../assets/images/activities/" +
-                      step.action +
-                      ".png")
-                    }
+                    
+                    src={action}
                     alt=""
                   />
                 </div>
                 <p className="step__description">{step.desc}</p>
               </section>
-            ))}
+            )})}
         </div>
       </div>
     );

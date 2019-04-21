@@ -43,6 +43,11 @@
         // height: 200px;
         // overflow-y: hidden;
 
+        &:hover, &:active {
+            color: #00C24C;
+            background-color: #f5f5f5;
+        }
+
         &:last-child {
             margin-right: 15px;
         }

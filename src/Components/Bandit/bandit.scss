@@ -92,10 +92,8 @@
         max-width: 100%;
 
            &_more {
-               position: static;
                margin-top: 10px;
                margin-bottom: 10px;
-            width: 100%;
 
            }
     }
@@ -112,6 +110,10 @@
         font-family: inherit;
         padding: 10px 20px;
         transition: all .5s;
+
+        &:active, &:hover {
+            background-color: #00A942;
+        }
 
      
     }

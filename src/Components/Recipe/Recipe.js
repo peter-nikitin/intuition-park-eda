@@ -10,11 +10,11 @@ import put from '../../assets/images/activities/put.png'
 import serve from "../../assets/images/activities/serve.png";
 
 export default class Recipe extends Component {
- 
+
   render() {
     //  console.log(this.props.choosenIndex);
     return (
-      <div className={"recipe " + this.props.animation + "-recipe"}>
+      <div className={"recipe " + this.props.animation + "-recipe"} id="recipe">
         <button
           className="recipe__backBtn"
           onClick={this.props.hideRecipeCard}
@@ -77,22 +77,35 @@ export default class Recipe extends Component {
                       <h2 className="step__ingredients">{step.products}</h2>
                     </div>
                     <div className="step__pic">
-                    <img
-                      src={action}
-                      alt=""
-                    />
-                  </div>
+                      <img src={action} alt="" />
+                    </div>
                   </div>
                   <p className="step__description">{step.desc}</p>
                 </section>
               );
             })}
+        </div>
+        <div className="recipe__buttons">
           <button
-            onClick={this.props.nextRecipe}
-          >Следующий рецепт
+            className="recipe__backBtn recipe__backBtn_bottom"
+            onClick={this.props.hideRecipeCard}
+          >
+            <img className="button-arrow" src={arrow} alt="" />
+            <span className="button-text">
+              все <br /> рецепты
+            </span>
           </button>
-
-            
+          <button
+            className="recipe__nextBtn"
+            onClick={this.props.changeRecipe}
+          >
+            <span className="button-text">{this.props.nextRecipe.name}</span>
+            <img
+              className="button-arrow button-arrow_right"
+              src={arrow}
+              alt=""
+            />
+          </button>
         </div>
       </div>
     );

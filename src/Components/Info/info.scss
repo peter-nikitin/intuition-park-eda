@@ -66,16 +66,10 @@
     }
     &__closeBtn {
         position: absolute;
-        bottom: 27px;
-        right: 18px;
-        color: #00C24C;
-        border-bottom: 1px dotted #00C24C;
+        bottom: 12px;
+        right: 8px;
         background: transparent;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        padding: 0 0 5px 0;
-        font-size: 16px;
-        line-height: 16px;
+        border: none;
+        padding: 10px;
     }
 }

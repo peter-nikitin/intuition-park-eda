@@ -33,7 +33,7 @@ export default class Spinner extends Component {
     position: 0,
     lastPosition: null
   };
-  static iconHeight = 114;
+  static iconHeight = 120;
   multiplier = Math.floor(Math.random() * (4 - 1) + 2.5);
 
   start = this.setStartPosition();
@@ -67,7 +67,6 @@ export default class Spinner extends Component {
     }
 
     let result = currentPosition / Spinner.iconHeight
-    console.log(result === '9');
     result = (result === 9) ? 0 : result;
     this.props.onFinish(-result);
     this.setState({

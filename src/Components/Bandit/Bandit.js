@@ -4,10 +4,9 @@ import Spinner from "../Spinner/Spinner";
 import Cards from "../Cards/Cards";
 import Info from "../Info/Info";
 import recipe from "../../data/recipes";
-import i from '../../assets/images/i.svg'
+import i from "../../assets/images/i.svg";
 
 import RecipeCard from "../Recipe/Recipe";
-
 
 class Bandit extends Component {
   constructor(props) {
@@ -22,12 +21,13 @@ class Bandit extends Component {
       infoAnimation: "append",
       recipeAnimation: "append",
       choosen: "",
-      choosenIndex: ""
+      choosenIndex: "",
+      nextRecipe: ""
     };
     this.finishHandler = this.finishHandler.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.showRecipe = this.showRecipe.bind(this);
-    // this.showNextRecipe = this.showNextRecipe.bind(this);
+    this.banditRef = React.createRef();
   }
 
   updateTheRecipe() {
@@ -73,37 +73,51 @@ class Bandit extends Component {
     }
   }
 
-  showRecipe(recipe1) {
+  showRecipe(targetRecipe) {
+    targetRecipe = recipe[0];
+    const index =
+      this.state.choosenRecipes.indexOf(targetRecipe) === -1
+        ? 0
+        : this.state.choosenRecipes.indexOf(targetRecipe);
+    let nextRecipe;
+    if (index === 2) {
+      nextRecipe = this.state.choosenRecipes[0];
+    } else {
+      nextRecipe = this.state.choosenRecipes[index + 1];
+    }
+
     this.setState({
-      showRecipe: !this.state.showRecipe,
-      recipeToOpen: recipe[0],
+      showRecipe: true,
+      recipeToOpen: targetRecipe,
       recipeAnimation: "append",
+      nextRecipe: nextRecipe
     });
   }
 
-  showNextRecipe(recipeIndex) {
-    const index =
-      this.state.choosenRecipes.indexOf(recipeIndex) === -1
-        ? 0
-        : this.state.choosenRecipes.indexOf(recipeIndex);
-    let targetRecipe;
-   if (index === 2) {
-      targetRecipe = this.state.choosenRecipes[0];
-    } else {
-      targetRecipe = this.state.choosenRecipes[index + 1];
+  showNextRecipe(target) {
+
+    const divToScrollTo = document.getElementById(
+      `recipe`
+    );
+    if (divToScrollTo) {
+      divToScrollTo.scrollIntoView({
+        behavior: "smooth"
+      });
     }
+    setTimeout(() => {
+      this.showRecipe(target);
+      // this.setState({
+      //   recipeToOpen: target,
+      //   recipeAnimation: "append"
+      // });
+    }, 1000);
 
     setTimeout(() => {
-      this.setState({
-        recipeToOpen: targetRecipe,
-        recipeAnimation: 'append'
-      });
-    }, 500);
-    this.setState({
-      recipeAnimation: "hide"
-    });
-
-    console.log(index);
+       this.setState({
+         recipeAnimation: "hide"
+       });
+    }, 400);
+   
   }
 
   hideRecipe() {
@@ -111,7 +125,7 @@ class Bandit extends Component {
       this.setState({
         showRecipe: !this.state.showRecipe
       });
-    }, 1000);
+    }, 500);
     this.setState({
       recipeAnimation: "hide"
     });
@@ -135,10 +149,12 @@ class Bandit extends Component {
     });
   }
 
+
   render() {
     const { showCards } = this.state;
     return (
-      <div className="bandit">
+      <div className="bandit" ref={this.banditRef}>
+        
         <div
           className={
             "bandit__display bandit__display_" + this.state.choosen
@@ -166,7 +182,6 @@ class Bandit extends Component {
             timer="2200"
           />
         </div>
-
         {/* show cards after spining the bandit */}
         {showCards && (
           <Cards
@@ -175,7 +190,6 @@ class Bandit extends Component {
             onClick={recipe => this.showRecipe(recipe)}
           />
         )}
-
         {/* bandit button  */}
         {this.state.showMoreBtn ? (
           <div className="bandit__buttons bandit__buttons_more">
@@ -205,13 +219,13 @@ class Bandit extends Component {
             </button>
           </div>
         )}
-
         {this.state.showRecipe && (
           <RecipeCard
             recipeToOpen={this.state.recipeToOpen}
             hideRecipeCard={() => this.hideRecipe()}
             animation={this.state.recipeAnimation}
-            nextRecipe={() => this.showNextRecipe(this.state.recipeToOpen)}
+            nextRecipe={this.state.nextRecipe}
+            changeRecipe={() => this.showNextRecipe(this.state.nextRecipe)}
             choosenIndex={this.state.choosenIndex}
           />
         )}

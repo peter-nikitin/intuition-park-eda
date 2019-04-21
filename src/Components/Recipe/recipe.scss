@@ -30,8 +30,8 @@
     }
 
     50% {
-visibility: hidden;
-transform: translateX(100%);
+        visibility: hidden;
+        transform: translateX(100%);
     }
 
     100% {
@@ -49,20 +49,22 @@ transform: translateX(100%);
     animation: hide-recipe .5s ease-in-out;
     visibility: hidden;
 }
+
 .change-recipe {
     animation: change-recipe .5s ease-in-out;
     // visibility: hidden;
 }
 
 .recipe {
-    -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #D6D9CE;
     z-index: 10000;
-    height: 100%;
+    // height: 100%;
+    padding-bottom: 40px;
 
     &__image {
         display: block;
@@ -72,6 +74,11 @@ transform: translateX(100%);
         margin-top: -225px;
     }
 
+    &__buttons {
+        padding: 20px 0 40px 0;
+        display: flex;
+        justify-content: space-between;
+    }
 
     &__backBtn {
         display: block;
@@ -81,11 +88,49 @@ transform: translateX(100%);
         color: black;
         font-size: 16px;
         font-family: "Montserrat", sans-serif;
+        display: flex;
+
+        &_bottom {
+            .button-arrow {
+            padding-top: 5px;
+            }
+        }
+    }
+
+    .button-arrow {
+        vertical-align: middle;
+        margin-right: 10px;
+        margin-bottom: 2px;
+        padding-top: 3px;
+
+        &_right {
+            transform: rotate(180deg)
+        }
+    }
+
+
+    &__nextBtn {
+        font-style: italic;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 26px;
+        text-align: right;
+        letter-spacing: -0.02em;
+        display: flex;
+        padding: 10px 10px 0;
+        background: none;
+        border: none;
+        max-width: 220px;
 
         .button-arrow {
-            vertical-align: middle;
+            padding-bottom: 5px;
+
+        }
+
+        .button-text {
+            margin-left: 10px;
             margin-right: 10px;
-            margin-bottom: 2px;
+
         }
     }
 
@@ -100,7 +145,7 @@ transform: translateX(100%);
 
     &__body {
         background-color: #fff;
-        padding: 30px 20px 40px; 
+        padding: 30px 20px 40px;
         border-radius: 16px;
         margin-top: 2px;
 

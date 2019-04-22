@@ -16,7 +16,7 @@ const info = (props) => {
           инструкции.
         </p>
         <p>
-          Сделали Степан Шашеро, Пётр Никитин и Людмила Ткаченко за 7 недель <a className="info__link" href="http://intuition.team/park">в&nbsp;Парке Интуиции</a>.
+          Сделали Степан Шашеро, Пётр Никитин и Людмила Ткаченко за 4 недели <a className="info__link" href="http://intuition.team/park">в&nbsp;Парке Интуиции</a>.
         </p>
         <a href="http://intuition.team/park">
           <img src={park} alt="Парк" />

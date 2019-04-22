@@ -92,7 +92,8 @@ export default class Recipe extends Component {
           >
             <img className="button-arrow" src={arrow} alt="" />
             <span className="button-text">
-              все <br /> рецепты
+              назад
+              {/* все <br /> рецепты */}
             </span>
           </button>
           {/* <button

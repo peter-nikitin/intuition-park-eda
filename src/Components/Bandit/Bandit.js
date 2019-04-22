@@ -74,7 +74,7 @@ class Bandit extends Component {
   }
 
   showRecipe(targetRecipe) {
-    targetRecipe = recipe[0];
+    // targetRecipe = recipe[0];
     const index =
       this.state.choosenRecipes.indexOf(targetRecipe) === -1
         ? 0

@@ -95,7 +95,7 @@ export default class Recipe extends Component {
               все <br /> рецепты
             </span>
           </button>
-          <button
+          {/* <button
             className="recipe__nextBtn"
             onClick={this.props.changeRecipe}
           >
@@ -105,7 +105,7 @@ export default class Recipe extends Component {
               src={arrow}
               alt=""
             />
-          </button>
+          </button> */}
         </div>
       </div>
     );

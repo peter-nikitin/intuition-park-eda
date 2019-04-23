@@ -32,13 +32,14 @@
     visibility: hidden;
 }
 .info {
+    color: white;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1100;
-    background-color: #D6D9CE;
+    background: linear-gradient(180deg, #434459 0%, #1A1921 100%);
     padding: 30px 20px;
 
     h1 {
@@ -59,10 +60,10 @@
 
     &__link {
         text-decoration: none;
-        color: #00C24C;
+        color: #0079FE;
 
         &:hover, &:active {
-            color: #00C24C;
+            color: #0067D9;
         }
     }
 
@@ -71,14 +72,14 @@
     }
 
     &__add {
-        background: rgba(255, 255, 255, .4);
+        background: rgba(99, 106, 129, .5);
         padding: 10px 16px;
         border-radius: 8px;
         margin-top: 40px;
     }
     &__closeBtn {
         position: absolute;
-        bottom: 12px;
+        bottom: 20px;
         right: 8px;
         background: transparent;
         border: none;

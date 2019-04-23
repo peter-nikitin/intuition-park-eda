@@ -10,7 +10,7 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch; 
 
-  box-shadow: hsla(75, 8%, 80%, 1) 0px 0px 30px 12px;
+  box-shadow: #2f2f3e 0px 0px 30px 30px;
 }
 
 @supports (padding-top: constant(safe-area-inset-top)) {

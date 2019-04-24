@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import "./cards.scss";
 import { Object } from 'core-js';
+import question from "../../assets/images/empty-state.svg";
 
 export default class Cards extends Component {
 
@@ -16,7 +17,21 @@ export default class Cards extends Component {
             {Object.keys(recipe).map((item, i) => {
               let card = "";
 
-              if (recipe[item] !== undefined) {
+              if (recipe[item] === undefined) {
+                card = (
+                  <div
+                    key={i}
+                    className={"card__item " + animation}
+                  >
+                    <img
+                      src={question}
+                      alt="Вопросики-вопросики"
+                      className="card__image card__image_question"
+                    />
+                  </div>
+                );
+              } else {
+
                 card = (
                   <div
                     key={i}
@@ -33,7 +48,7 @@ export default class Cards extends Component {
                     <div className="card__name">
                       <span>{recipe[item].name}</span>
                     </div>
-                    {/* <p>{recipe[item].description}</p> */}
+                   
                   </div>
                 );
               }

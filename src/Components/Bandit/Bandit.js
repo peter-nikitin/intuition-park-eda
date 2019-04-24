@@ -13,8 +13,8 @@ class Bandit extends Component {
     super(props);
     this.state = {
       spinner: Array(3).fill(0),
-      showCards: false,
-      choosenRecipes: [recipe[0], recipe[0], recipe[0]],
+      showCards: true,
+      choosenRecipes: [undefined, undefined, undefined],
       showMoreBtn: false,
       cardAnimation: "append",
       iSshowInfo: false,

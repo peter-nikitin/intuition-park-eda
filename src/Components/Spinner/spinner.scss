@@ -1,11 +1,11 @@
 .spinner {
     overflow: hidden;
-    background: url(../../assets/images/spinner/spinner-2x.png) repeat-y;
+    background: url(../../assets/images/spinner/simple3.png) repeat-y;
     will-change: backgroundPosition;
     transition: 0.3s background-position ease-in-out;
     background-size: 100% auto;
     height: 360px;
-    border-right: 4px solid #CECECE;
+    border-right: 4px solid rgba(51, 51, 67, 0.4);
 
     &:last-child {
         border-right: 4px solid transparent;

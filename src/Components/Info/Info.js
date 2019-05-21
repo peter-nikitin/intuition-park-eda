@@ -11,7 +11,7 @@ const info = (props) => {
       <div className={"info " + props.animation + "-info"}>
         <h1>О проекте</h1>
         <p>
-          «Подбиратор рецептов» для тех, кому тяжело придумать, что
+          Food Casino для тех, кому тяжело придумать, что
           приготовить. Вращайте барабан и готовьте по крупной понятной
           инструкции.
         </p>
@@ -22,7 +22,7 @@ const info = (props) => {
           <img src={park} alt="Парк" />
         </a>
         <p className="info__add">
-          Добавьте «Подбиратор рецептов» на&nbsp;домашний экран. Для этого
+          Добавьте Food Casino на&nbsp;домашний экран. Для этого
           нажмите <img src={share} alt="share" /> в мобильном Сафари.
         </p>
         <button onClick={props.onClick} className="info__closeBtn">
